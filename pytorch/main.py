@@ -6,6 +6,8 @@
 #Step 1 import libraries
 import torch
 from torch.utils import data
+import numpy
+import matplotlib.pyplot as plt
 # `nn` is an abbreviation for neural networks
 from torch import nn 
 
@@ -24,6 +26,13 @@ features, labels = synthetic_data(true_m, true_c, 1000)
 
 print('features:', features[0],'\nlabel:', labels[0])
 
+#Optional Step: Visualize data set 
+plt.figure()
+plt.xlabel('features')
+plt.ylabel('labels')
+plt.scatter(features[:, (1)].detach().numpy(), labels.detach().numpy(), 1)
+#plt.show() # uncomment if you want to plot the dataset 
+# You need to close the  figure window to resume the code
 
 
 #Step 3: Read dataset and create small batch
@@ -38,14 +47,6 @@ batch_size = 10
 data_iter = load_array((features, labels), batch_size)
 
 next(iter(data_iter))
-
-#Optional to see mini batches
-#mini_batch = (iter(data_iter))
-#for i in mini_batch:
-#   print (i)
-#   next(mini_batch)
-
-
 
 #Step4: Define model & initialization
 # Create single layer feed-forward network with 2 inputs and 1 outputs.
