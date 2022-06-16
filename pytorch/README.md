@@ -5,6 +5,7 @@ This repo is a fork of "Dive into Deep Learning" excercise. The repo contains an
 to use this fork please cd to pytorch director and execute main.py
 
 Rest of the step shows how to Dockerize the script. 
+Details of the implementation can be found in this blog: https://www.docker.com/blog/how-to-train-and-deploy-a-linear-regression-model-using-pytorch-part-1/
 
 ## Dockerizing Linear Regression solution using PyTorch and Docker
 
